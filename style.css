@@ -1,0 +1,37 @@
+nav{
+  display: flex;
+  position: fixed;
+  top:0;
+  width: 100%;
+  background-color: black;
+  overflow: auto;
+  height: auto;
+}
+
+.left-links{
+  flex:1 1 200px;
+}
+
+.links {
+  display: inline-block;
+  text-align: center;
+  padding: 14px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.navbar text {
+  font-size: 30px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  font-weight: bold;
+}
