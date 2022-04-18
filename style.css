@@ -1,16 +1,25 @@
-nav{
+nav {
   display: flex;
   position: fixed;
-  top:0;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background-color: black;
   overflow: auto;
   height: auto;
 }
 
-.left-links{
+.left-links {
   flex:1 1 200px;
 }
+
+.right-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .links {
   display: inline-block;
@@ -19,19 +28,17 @@ nav{
   color: white;
   text-decoration: none;
   font-size: 17px;
-  font-weight: bolder;
 }
 
-.navbar text {
-  font-size: 30px;
+nav text {
   display: inline-block;
-  color: white;
   text-align: center;
   padding: 14px 20px;
+  color: white;
   text-decoration: none;
+  font-size: 30px;
 }
 
-/* Change color on hover */
-.navbar a:hover {
+nav a:hover {
   font-weight: bold;
 }
