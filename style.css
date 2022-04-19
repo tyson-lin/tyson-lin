@@ -1,13 +1,22 @@
+header {
+  height: 30vh;
+  width: 100%;
+  background: url(pictures/pipeline-cropped.JPG);
+  background-size: 100vw auto;
+  background-position: left top;
+  position: relative;
+  margin: 0;
+}
+
 nav {
   display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   background-color: black;
   overflow: auto;
   height: auto;
+  position: sticky;
+  position: -webkit-sticky;
 }
 
 .left-links {
@@ -41,4 +50,22 @@ nav text {
 
 nav a:hover {
   font-weight: bold;
+}
+
+body {
+  margin: 0;
+}
+
+.about {
+  margin-top: 2vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.row {
+  display: table;
+}
+
+.column {
+  float: left;
 }
