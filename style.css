@@ -57,15 +57,29 @@ body {
 }
 
 .about {
+  display: grid;
+  grid-template-columns: 35vw 35vw;
   margin-top: 2vh;
   margin-left: 10vw;
   margin-right: 10vw;
+  column-gap: 10 vw;
 }
 
-.row {
-  display: table;
+.blurb {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding: 5vw
 }
 
-.column {
-  float: left;
+.portrait {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  max-width: 35vw;
+  padding: 5vw
+}
+
+.portrait img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
 }
