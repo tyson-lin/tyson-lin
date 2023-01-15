@@ -25,14 +25,8 @@ nav {
 
 .left-links {
   flex:1 1 200px;
-}
 
-.right-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-
 
 .links {
   display: inline-block;
@@ -93,6 +87,35 @@ body {
 
 .contact {
   margin-bottom: 1vh;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 50vw 30vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  align-items: center;
+}
+
+.post-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 5vw;
+}https://www.birds.eecs.umich.edu/
+
+.post-body {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-size: 15px;
+  margin-right: 5vh;
+}
+
+.post-photo {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  width: 30vw;
 }
 
 footer {
