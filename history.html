@@ -23,21 +23,138 @@
   <div class="post">
     <div class="post-body">
       <div class="post-title">
+        Embedded Systems for Tracking and Autonomous Robotics
+      </div>
+      <div class="post-date">
+        September 2023 - Present
+      </div>
+      <div class="post-job">
+        Research Assistant
+      </div>
+      <br>
+      Currently I am working on designing suction cup tags to track dolphin
+      motion data. We want to measure the joint angles in a dolphin's body. 
+      This would be simple to do above water, but traditional motion capture systems
+      don't work underwater. I started off by designing a PCB the tag. The system 
+      has a few things - an ESP32, an IMU, a pressure sensor, a SD card, 
+      and power and flashing
+      circuitry. We eventually plan to add a Hall Effect sensor to measure speed.
+      <br><br>
+      To calculate the joint angles of the dolphin's body, we're using an 
+      <a href="https://x-io.co.uk/open-source-imu-and-ahrs-algorithms/">
+        Open Source Madgwick Filter
+      </a>
+      to calculate the absolute euler angles of each tag, and the finding the 
+      differences.
+      <br><br>
+      This summer I'll be working on making the tags wirelessly interfacable
+      so that we can seal the tags completely from saltwater. This includes a number
+      of different things: 
+      <ul>
+        <li>Wireless charging</li>
+        <li>Over-the-air firmware updates</li>
+        <li>
+          Hosting a website from the tag and using it to 
+          change system parameters and manage SD card data
+        </li>
+      </ul>
+    </div>
+    <div>
+      <img src="pictures/dolphin-tag-pcb.jpg" class="post-photo">
+    </div>
+  </div>
+<!--
+  <div class="post">
+    <div class="post-body">
+      <div class="post-title">
+        Glove Mouse Emulator
+      </div>
+      <div class="post-date">
+        September 2023 - December 2023
+      </div>
+      <div class="post-job">
+        EECS 373: Introduction to Embedded Systems
+      </div>
+      For the EECS 373 final project my ground built a glove that was able to 
+      emulate a mouse. We used flex sensors on each finger to simulate different buttons
+      on the mouse. An IMU was used for mouse movement, with quaternions to prevent gimbal
+      locking. Data from the glove was transmitted to the laptop through serial over 
+      XBee modules. We used the C++ Xlib library to control the cursor on the laptop.
+    </div>
+  </div>
+-->
+  <div class="post">
+    <div class="post-body">
+      <div class="post-title">
         Vayu Aerospace
       </div>
       <div class="post-date">
-        January 2023 - Present
+        January 2023 - August 2023
       </div>
-      I am currently working as a systems integration intern at Vayu Aerospace. 
-      As a systems integration intern, I help with designing and integrating our electronics
-      into the mechanical design of our drones.
-      <br><br>
+      <div class="post-job">
+        Systems Integration Intern
+      </div>
       <a href="https://vayuaerospace.com/">Vayu Aerospace</a>
+      <br><br>
+      I spent a semester and a summer interning at an Aerospace startup that builds drones. 
+      <br><br>
+      My main project was to write and test the software that would set off flashbangs 
+      being carried by an octocopter. Our microcontroller was an STM32 F1 chip. The software 
+      was structured as a state machine that had a boot sequence and an arm/disarm procedure. 
+      The system would take in commands from the RC controller, and use that information to 
+      trigger the flashbangs. There were a lot of potential risks, so after every change to 
+      the software significant testing was done to verify that flashbangs would not be going 
+      off accidentally. I worked with other engineers to design a comprehensive test procedure. 
+      <br><br>
+      One significant challenge that I faced during this was debugging the PCB. The PCBs 
+      had just arrived, and we had one week to integrate everything together for a coming 
+      trade show. It was a five layer PCB designed by a third party, so an electrical 
+      engineering intern and I had to familiarize ourselves with the schematic and layout. 
+      And as expected, it didn’t work. What made this difficult was the signals that 
+      triggered the flashbangs had to go through a complicated sequence of logic gates 
+      as a further precaution against accidental explosions. The flashbangs weren’t being 
+      set off when they should be. We spent a lot of time figuring out if it was a hardware 
+      or software problem. I wrote the software on a development board, so I was not 
+      completely confident. We tested every single combination of the logic gate inputs.
+      We found a few bugs - there was one logic gate that had an incorrect pin mapping, 
+      another pin was meant to be tied to ground, and there was a via that did not connect 
+      the top and bottom layers when it was supposed to. We just barely got it working on 
+      Friday at 6 pm before the trade show on Saturday. Our boss sent us a video of the 
+      flashbangs working at the trade show that weekend.
+      <br><br>
+      The PCB had very few breakout pins and was incredibly hard to debug. Further into 
+      my internship I built a GUI that reads serial data coming out of the microcontroller 
+      and displays it nicely. There were ~50 parameters that were useful for debugging and 
+      this helped a lot. If I had more time during the summer I was considering adding a 
+      way for the user to change system parameters through the GUI, instead of having 
+      to learn how to flash the code each time.
+      <br><br>
+      One thing that I grew in here was project documentation. As the summer wrapped up,
+      I was tasked with making sure one of the new engineers (converted from intern) understood 
+      how to use the system, and how to maintain it. I realized that the project that I had 
+      so intimately worked with for the past 6 months was not very familiar to anyone else. 
+      After introducing the new engineer to the project, we ended up working together to write
+      up a detailed document containing things like how the system works, how to update the software, 
+      and a thorough testing procedure. 
       <hr>
     </div>
 
+    <div class="vayu-post-media-column">
+      <img src="pictures/vayu_pcb1.jpg" class="vayu-pcb-1">
+      <img src="pictures/vayu_pcb2.jpg" class="vayu-pcb-2">
+      <div class="vayu-pcb-caption">
+        The PCB that I worked on at Vayu. This photo also shows the changes (the jumper 
+        wires on all the surface mount components) that we made to get it working in 
+        time for the trade show.
+      </div>
 
-    <img src="pictures/vayu.jpg" class="post-photo">
+      <img src="pictures/vayu_setup.JPG" class="vayu-setup">
+      <div class="vayu-pcb-caption">
+        Here's a photo of the entire system being bench tested. The flashbangs are the three round-ish pillars. 
+      </div>
+
+    </div>
+    
   </div>
 
   <div class="post">
@@ -46,41 +163,62 @@
         BIRDS Lab
       </div>
       <div class="post-date">
-        November 2021 - Present
+        November 2021 - December 2023
       </div>
-      I work under Professor Shai Revzen at the Biologically Inspired Robotics and Dynamical 
-      Systems (BIRDS) Lab. The main 
-      area of study of our lab is legged locomotion. 
+      <div class="post-job">
+        Robotics Research Assistant 
+      </div>
+      <a href="https://www.birds.eecs.umich.edu/">BIRDS Lab</a>
+      <br><br>
+      I worked under Professor Shai Revzen at the Biologically Inspired Robotics and Dynamical 
+      Systems (BIRDS) Lab. The main area of study of our lab is legged locomotion. 
       <br><br>
       My first project was to 3D motion capture data on our hopping robot using Qualysis.
       The math involved in this is beyond me, but the experiment required each leg of the robot
       to have a different spring constant. Because of that, the robot did not hop straight up, 
       and hopped in a completely random direction in each hop, and therefore would often hop
-      out of the motion capture system. I spent a lot of time optimizing the gait so that 
+      out of the motion capture system. Having long takes in the motion capture system was important,
+      so I spent a lot of time optimizing the gait so that 
       it hops inside the motion capture system.
       <br><br>
-      For the past year I have been working with another undergraduate student on a quadcopter 
-      (I know that quadcopters don't have legs, but I think the project is really fun and I am learning a 
-      lot). We want to study 
+      After that my primary project within the lab was to build a quadcopter. The professor wanted to study 
       how mechanical design parameters can be chosen through iteration, through the lens of 
       quadcopter motor positions. So we're going to fly a quadcopter, have a computer analyze 
-      the flight and give us new parameters, and repeat with a new chassis. 
+      the flight and give us new parameters, and repeat with a new chassis. There were three primary
+      parts to this project: the hardware, the chassis, and the controller. 
       <br><br>
-      So far, I've designed the paremterized chassis and brought up the hardware. The challenge now
-      is to generalize a controller for any set of motor positions. I've built an inverted stewart platform 
-      to help with this. With springs instead of hydraulics, it acts as a 6 degree-of-freedom 
-      force/torque sensor that lets us quickly calculate the torques and forces each motor applies 
-      to the chassis as a function of thrust. 
+      The hardware was my first introduction to embedded systems. We used an ESP32-CAM (non
+      Aruindo environment) for processing. We
+      had typical quadcopter peripherals (IMU, TOF sensors, 
+      and speed controllers), which I implemented interfaces for.
+      Along with writing firmware, I also assembled a PCB protoboard to tie everything together. 
       <br><br>
-      As of January 2023, I don't have any time to work on the project. There is a new team of students
-      that will be working on the quadcopter, and I'll be helping them understand what we've done,
-      and what generally needs to happen.
+      I also designed the chassis for the quadcopter. There were a few requirements: the chassis
+      needed to be quick and cheap to reproduce, so it was to be laser cut out of foamcore. It needed to be
+      strong - foamcore is very weak. It also needed to have parameterizable motor positions. This proved 
+      very difficult, because foamcore is incredibly limiting. 
       <br><br>
-      <a href="https://www.birds.eecs.umich.edu/">BIRDS Lab</a>
+      The third part was designing a controller. At this part of the project I learned that I don't really like
+      controls. It's not that I don't like challenges - doing the embedded system on the quadcopter was a big
+      challenge for me. It was not a standard quadcopter controller. Because we had varying motor positions,
+      we could not assume the quadcopter was symmetric. Nor could we assume that the IMU would be at the 
+      quadcopter's center of mass. This made designing the controller a huge mathematical challenge. 
+      <br><br>
+      In my last semester at this lab, I spent my time onboarding new students onto the project.
+      I learned important things about how to introduce someone to a project and set them up for success.
+      One of the most important things I learned was how to break down a project into digestible parts 
+      for someone who may not be as experienced. I found that project roadmaps and concrete starting points 
+      were incredibly useful. It was a lot of "here's what I've done, here's where we are going, here 
+      are some immediate next steps".
       <hr>
     </div>
 
-    <img src="pictures/quadcopter.png" class="post-photo">
+    <div class="post-media-column">
+      <img src="pictures/quadcopter.png" class="post-media-item">
+      <video controls class="post-media-item  video-container">
+        <source src="videos/IMG_4668.mp4" type="video/mp4" class="post-photo">
+      </video>
+    </div>
   </div>
 
   <div class="post">
@@ -88,9 +226,13 @@
       <div class="post-title">
         Hands on Robotics
       </div>
+      <div class="post-job">
+        Instructional Aide
+      </div>
       <div class="post-date">
         August 2022 - December 2022
       </div>
+      <br><br>
       I worked as an instructional aide (IA) for EECS 464 - Hands on Robotics (HRB). 
       HRB is a senior/graduate ECE elective, where students work in teams to design robots 
       to accomplish various tasks. The class uses Robotis DYNAMIXEL motors, and the primary

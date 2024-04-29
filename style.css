@@ -103,14 +103,16 @@ body {
   font-size: 30px;
   font-weight: bold;
   margin-top: 5vw;
-}https://www.birds.eecs.umich.edu/
+}
 
 .post-body {
   grid-column-start: 1;
   grid-column-end: 2;
   font-size: 15px;
   margin-right: 5vh;
+  padding: 10px;
 }
+
 
 .post-photo {
   grid-column-start: 2;
@@ -118,9 +120,65 @@ body {
   width: 30vw;
 }
 
+.post-media-column {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  width: 30vw;
+} 
+
+.post-media-item {
+  width: 30vw;
+  padding: 10px;
+}
+
+.video-container {
+  height: 600px;
+  overflow: hidden;
+}
+
+.vayu-post-media-column {
+  display: grid;
+  grid-template-columns: 15vw 15vw;
+}
+
+.vayu-pcb-1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 15vw;
+}
+
+.vayu-pcb-2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  width: 15vw;
+}
+
+.vayu-pcb-caption {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.vayu-setup {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 30vw;
+}
+
+
 footer {
   width: 100vw;
   background-color: black;
   height: 10vh;
 }
 
+.course-table {
+  border: none;
+  padding: 10px;
+}
+
+.course-table td {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-right: 4%;
+  padding-left: 4%;
+}
