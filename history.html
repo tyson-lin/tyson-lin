@@ -23,7 +23,7 @@
   <div class="post">
     <div class="post-body">
       <div class="post-title">
-        Embedded Systems for Tracking and Autonomous Robotics
+        Embedded Systems for Tracking and Autonomous Robotics (ESTAR) Lab
       </div>
       <div class="post-date">
         September 2023 - Present
@@ -32,32 +32,24 @@
         Research Assistant
       </div>
       <br>
-      Currently I am working on designing suction cup tags to track dolphin
-      motion data. We want to measure the joint angles in a dolphin's body. 
-      This would be simple to do above water, but traditional motion capture systems
-      don't work underwater. I started off by designing a 4-layer PCB for the tag. The system 
-      has a few things - an ESP32, an IMU, a pressure sensor, a SD card, 
-      and power and flashing
-      circuitry. We eventually plan to add a Hall Effect sensor to measure speed.
+      The ESTAR lab has tags for collecting biological data and kinematic data 
+      off of cetaceans (dolphins, whales, etc). I develop the hardware and the 
+      data processing tools for these tags. During my time here I've worked 
+      on a few different things.
       <br><br>
-      To calculate the joint angles of the dolphin's body, we're using an 
-      <a href="https://x-io.co.uk/open-source-imu-and-ahrs-algorithms/">
-        Open Source Madgwick Filter
-      </a>
-      to calculate the absolute euler angles of each tag, and the finding the 
-      differences.
+      One of the goals is to make the tags completely sealed, to protect from saltwater.
+      This means three things - wireless charging, WiFi communication, and over-the-air
+      firmware updates. This past summer I've implemented wireless charging using the 
+      TI BQ51013 chip, and designed a daughter board for the main board inside our tags.
       <br><br>
-      This summer I'll be working on making the tags wirelessly interfacable
-      so that we can seal the tags completely from saltwater. This includes a number
-      of different things: 
-      <ul>
-        <li>Wireless charging</li>
-        <li>Over-the-air firmware updates</li>
-        <li>
-          Hosting a website from the tag and using it to 
-          change system parameters and manage SD card data
-        </li>
-      </ul>
+      We also have various types of tags, and I developed a standardized procedure to verify
+      each tag's kinematic data, along with data processing tools to go along with it. Our tags also drift
+      at different rates over time, and the data processing tools are also able to characterize sensor 
+      drift. This resulted in one massive data processing pipeline that calibrates data,
+      sychronizes multiple tags, calculates drift, and plots whatever the user wants, written in MATLAB.
+      I documented all of the code and every single procedure. 
+      We sent this pipeline over to collaborators and they have successfully used it to verify the tags that
+      we have lent them. 
     </div>
     <div>
       <img src="pictures/dolphin-tag-pcb.jpg" class="post-photo">
